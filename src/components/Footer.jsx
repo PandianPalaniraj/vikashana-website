@@ -17,7 +17,7 @@ const cols = [
       { label: 'About Us',       href: '#' },
       { label: 'Blog',           href: '#' },
       { label: 'Careers',        href: '#' },
-      { label: 'Privacy Policy', href: '#' },
+      { label: 'Privacy Policy', href: '/privacy-policy' },
       { label: 'Terms of Use',   href: '#' },
     ],
   },
@@ -83,10 +83,14 @@ export default function Footer() {
         <div style={{ borderTop:'1px solid #1e293b', paddingTop:24, display:'flex', justifyContent:'space-between', alignItems:'center', flexWrap:'wrap', gap:12 }}>
           <p style={{ fontSize:13 }}>© {new Date().getFullYear()} Vikashana. All rights reserved. Made with ❤️ in India.</p>
           <div style={{ display:'flex', gap:20 }}>
-            {['Privacy', 'Terms', 'Cookies'].map(l => (
-              <a key={l} href="#" style={{ fontSize:13, color:'#64748b' }}
+            {[
+              { label: 'Privacy',  href: '/privacy-policy' },
+              { label: 'Terms',    href: '#' },
+              { label: 'Cookies',  href: '#' },
+            ].map(l => (
+              <a key={l.label} href={l.href} style={{ fontSize:13, color:'#64748b' }}
                 onMouseEnter={e => e.target.style.color='#fff'}
-                onMouseLeave={e => e.target.style.color='#64748b'}>{l}</a>
+                onMouseLeave={e => e.target.style.color='#64748b'}>{l.label}</a>
             ))}
           </div>
         </div>
