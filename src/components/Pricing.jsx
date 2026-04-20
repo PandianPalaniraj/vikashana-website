@@ -2,35 +2,18 @@ import { WA_REG } from '../constants'
 
 const plans = [
   {
-    name: 'Starter',
-    price: '₹15',
+    name: 'Pro',
+    price: '₹25',
     per: '/ student / month',
-    desc: 'All web modules, unlimited students. No mobile app.',
-    color: '#3b82f6',
-    bg: '#eff6ff',
+    desc: 'All web modules, unlimited students, plus the full mobile experience.',
+    color: 'var(--primary)',
+    bg: 'var(--primary)',
     features: [
       'Unlimited students & teachers',
       'All web modules',
       'Fee management & receipts',
       'Homework & exams',
       'Advanced reports',
-      'Parent web portal',
-      'Annual billing discount',
-    ],
-    notIncluded: ['Mobile app (parent & teacher)'],
-    cta: 'Start 30-Day Trial',
-    href: WA_REG,
-    popular: false,
-  },
-  {
-    name: 'Pro',
-    price: '₹25',
-    per: '/ student / month',
-    desc: 'Everything in Starter plus the full mobile experience.',
-    color: 'var(--primary)',
-    bg: 'var(--primary)',
-    features: [
-      'Everything in Starter',
       'Parent mobile app',
       'Teacher mobile app',
       'Push notifications',
@@ -95,7 +78,7 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(4, 1fr)', gap:20, alignItems:'flex-start' }} className="pricing-grid">
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(3, 1fr)', gap:20, alignItems:'flex-start' }} className="pricing-grid">
           {plans.map(p => (
             <div key={p.name} style={{
               background: p.popular ? p.bg : '#fff',
@@ -150,7 +133,7 @@ export default function Pricing() {
         </p>
       </div>
       <style>{`
-        @media (max-width: 1024px) { .pricing-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+        @media (max-width: 900px)  { .pricing-grid { grid-template-columns: repeat(2, 1fr) !important; } }
         @media (max-width: 600px)  { .pricing-grid { grid-template-columns: 1fr !important; } }
       `}</style>
     </section>
